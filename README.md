@@ -17,3 +17,5 @@ I wanted to create a auto control viarium system that I did not have to monitor 
 
 Picture | Name | Purpose
 --------|------|---------
+|![Piboard](/imgs/pi_board.png)|Raspberry Pi 4 Model B|Main CPU Board|
+|![Adapter](/imgs/adapter.png)|Adapter|Power supply for Raspberry Pi 4|

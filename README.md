@@ -20,3 +20,12 @@ Picture | Name | Purpose
 |![Piboard](/imgs/pi_board.png)|Raspberry Pi 4 Model B|Main CPU Board|
 |![Adapter](/imgs/adapter.png)|Adapter|Power supply for Raspberry Pi 4 & Zero 2|
 |![relay](/imgs/relay_s.png)|Power Relay Board|Switch Vibrator and Heater on or off|
+
+- **Hardware Architecture**
+
+![Alt text](/imgs/Hardware_arch.png)
+
+### Software
+
+- **Software Architecture**
+![Alt text](/imgs/Softeare_arch.png)

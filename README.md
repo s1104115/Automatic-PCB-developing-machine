@@ -27,6 +27,9 @@ Picture | Name | Purpose
 |![ulb](/imgs/ul_control.png)|Ultra Sonic Control Board|Ultra Sonic and Heator Control|
 |![heat](/imgs/heator.png)|Heator|Heating|
 |![vib](/imgs/vibrator.png)|Ultra Sonic Vibrator|Vibrating|
+|![board](/imgs/Breadboard_s.png)|Bread Board|Creat Circuit|
+|![extension](/imgs/extension_s.png)|GPIO Extension Board|GPIO Extension|
+
 
 
 - **Hardware Architecture**

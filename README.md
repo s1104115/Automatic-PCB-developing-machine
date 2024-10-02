@@ -25,6 +25,10 @@ Picture | Name | Purpose
 
 ![Alt text](/imgs/Hardware_arch.png)
 
+- **Pin Define**
+
+![Alt text](/imgs/pin_define.png)
+
 ### Software
 
 - **Software Architecture**

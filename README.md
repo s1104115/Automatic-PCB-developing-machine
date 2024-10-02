@@ -29,6 +29,8 @@ Picture | Name | Purpose
 |![vib](/imgs/vibrator.png)|Ultra Sonic Vibrator|Vibrating|
 |![board](/imgs/Breadboard_s.png)|Bread Board|Creat Circuit|
 |![extension](/imgs/extension.png)|GPIO Extension Board|GPIO Extension|
+|![step_ctrl](/imgs/step_ctrl.png)|Step Motor Control Board|Step Motor Control|
+|![step_motor](/imgs/step_motor.png)|Step Motor|Step Motor|
 
 
 

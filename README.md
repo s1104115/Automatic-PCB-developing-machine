@@ -23,6 +23,11 @@ Picture | Name | Purpose
 |![relay](/imgs/relay_s.png)|Power Relay Board|Switch Vibrator and Heater on or off|
 |![ads](/imgs/ads.png)|ADC Convertor Board|Convert Analog Signal to Digital|
 |![tubidity](/imgs/turbidity.png)|Turbidity Sensor|Turbidity Detect|
+|![temp](/imgs/temp_sensor.png)|Temperature Sensor|Temperature Detect|
+|![ulb](/imgs/ul_control.png)|Ultra Sonic Control Board|Ultra Sonic and Heator Control|
+|![heat](/imgs/heator.png)|Heator|Heating|
+|![vib](/imgs/vibrator.png)|Ultra Sonic Vibrator|Vibrating|
+
 
 - **Hardware Architecture**
 

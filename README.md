@@ -28,7 +28,7 @@ Picture | Name | Purpose
 |![heat](/imgs/heator.png)|Heator|Heating|
 |![vib](/imgs/vibrator.png)|Ultra Sonic Vibrator|Vibrating|
 |![board](/imgs/Breadboard_s.png)|Bread Board|Creat Circuit|
-|![extension](/imgs/extension_s.png)|GPIO Extension Board|GPIO Extension|
+|![extension](/imgs/extension.png)|GPIO Extension Board|GPIO Extension|
 
 
 

@@ -18,9 +18,11 @@ I wanted to create a auto control viarium system that I did not have to monitor 
 Picture | Name | Purpose
 --------|------|---------
 |![Piboard](/imgs/pi_board.png)|Raspberry Pi 4 Model B|Host CPU Board|
-|![Piboard](/imgs/zero_2.png)|Raspberry Pi Zero 2 W|System Control Board|
+|![Zero2](/imgs/zero_2.png)|Raspberry Pi Zero 2 W|System Control Board|
 |![Adapter](/imgs/adapter.png)|Adapter|Power supply for Raspberry Pi 4 & Zero 2|
 |![relay](/imgs/relay_s.png)|Power Relay Board|Switch Vibrator and Heater on or off|
+|![ads](/imgs/ads.png)|ADC Convertor Board|Convert Analog Signal to Digital|
+|![tubidity](/imgs/turbidity.png)|ADC Convertor Board|Turbidity Sensor|
 
 - **Hardware Architecture**
 

@@ -6,7 +6,7 @@ Automatic PCB developing machine
 - [Build Guide](#build-guide)
 
 ## Background
-I wanted to create a auto control viarium system that I did not have to monitor 24/7 and tend to all change from day to night for my Mom. It started out as a project to monitor the humidity. I want to maintain the right temperature and humidity for the plants. I detect temperature and humidity by sensors to control the humidifier and plant light.
+I wanted to create an automatic PCB development machine which can speed up PCB mass production with ultra sonic vibrator and heator. I could use Respbarry to monitor the temperature and water tubidity to control this system. This system also have web server and tcp server which could be controlled remotely. 
 
 ## Environment
 
@@ -22,7 +22,7 @@ Picture | Name | Purpose
 |![Adapter](/imgs/adapter.png)|Adapter|Power supply for Raspberry Pi 4 & Zero 2|
 |![relay](/imgs/relay_s.png)|Power Relay Board|Switch Vibrator and Heater on or off|
 |![ads](/imgs/ads.png)|ADC Convertor Board|Convert Analog Signal to Digital|
-|![tubidity](/imgs/turbidity.png)|ADC Convertor Board|Turbidity Sensor|
+|![tubidity](/imgs/turbidity.png)|Turbidity Sensor|Turbidity Detect|
 
 - **Hardware Architecture**
 

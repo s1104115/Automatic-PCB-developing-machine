@@ -56,3 +56,18 @@ Picture | Name | Purpose
 
 ![Alt text](/imgs/flow_heating.png)
 
+- **Software Ultra Sonic Flow Chart**
+
+![Alt text](/imgs/flow_sonic.png)
+
+- **Software Step Motor Flow Chart**
+
+![Alt text](/imgs/flow_motor.png)
+
+- **Software TCP Client Parameter Setup Flow Chart**
+
+![Alt text](/imgs/flow_tcp_client_listen.png)
+
+- **Software TCP Client Data Update Flow Chart**
+
+![Alt text](/imgs/flow_tcp_client_output.png)

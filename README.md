@@ -46,3 +46,6 @@ Picture | Name | Purpose
 
 - **Software Architecture**
 ![Alt text](/imgs/Softeare_arch.png)
+
+- **Software Main Flow Chart**
+![Alt text](/imgs/flow_main.png)

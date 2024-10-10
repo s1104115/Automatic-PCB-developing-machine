@@ -49,3 +49,7 @@ Picture | Name | Purpose
 
 - **Software Main Flow Chart**
 ![Alt text](/imgs/flow_main.png)
+
+- **Software Heating Flow Chart**
+![Alt text](/imgs/flow_heating.png)
+

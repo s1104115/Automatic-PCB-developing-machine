@@ -44,6 +44,10 @@ Picture | Name | Purpose
 
 ### Software
 
+- **Web UI**
+
+![Alt text](/imgs/web_design.png)
+
 - **Software Architecture**
 
 ![Alt text](/imgs/Softeare_arch.png)

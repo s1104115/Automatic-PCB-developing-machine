@@ -71,3 +71,11 @@ Picture | Name | Purpose
 - **Software TCP Client Data Update Flow Chart**
 
 ![Alt text](/imgs/flow_tcp_client_output.png)
+
+- **Software TCP Server Data Update Flow Chart**
+
+![Alt text](/imgs/flow_tcp_srv_update.png)
+
+- **Software TCP Server Command Setup Flow Chart**
+
+![Alt text](/imgs/flow_tcp_srv_cmd.png)

@@ -1,0 +1,193 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>
+        自動顯影機
+</title>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+<script src="//ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1.js"></script>
+<script src="sevenSeg.js"></script>
+<style>
+	body {
+        font-family: Arial, sans-serif;
+        margin: 10px;
+	}
+
+    h1 {
+		color: black;
+    }
+
+    h3 {
+		color: #333;
+	}
+
+    button {
+		padding: 40px 80px;
+		font-size: 38px;
+		margin: 10px 300px;
+		background-color: #4CAF50;
+		color: white;
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+	}
+
+	button:hover {
+		background-color: #45a049;
+	}
+	
+	.wrapper {
+		width: 20%;
+		display: grid;
+		grid-template-columns: 200px 200px 200px 200px;
+		grid-gap: 15px;
+		background-color: #fff;
+		color: #444;
+	}
+
+	.box {
+		color: #444;
+		text-align:center;
+		border-radius: 5px;
+		padding: 1px;
+		font-size: 150%;
+	}
+</style>
+
+</head>
+
+<body onload="loadpage()">
+
+<script>
+var ws;
+var ip = location.host;
+var buttonStat = 0;
+function loadpage() {
+	$("#curTemp").sevenSeg({ digits: 2, value: 25 });
+	$("#setTemp").sevenSeg({ digits: 2, value: 45 });
+	$("#curTur").sevenSeg({ digits: 3, value: 3 });
+	$("#setTur").sevenSeg({ digits: 2,value: 10 });
+}
+
+function buttonFunction() {
+	const button = document.getElementById('start_btn');
+	if(buttonStat == 0) {
+		button.innerHTML = 'Stop';
+		buttonStat = 1;
+		ws.send("Start");
+	} else {
+		button.innerHTML = 'Start';
+		buttonStat = 0;
+		ws.send("Stop");
+	}
+}
+
+var tempValue = 45;
+var turValue = 10;
+
+function buttonSetTempUp() {
+	if(tempValue >= 99)
+		return;
+	tempValue++;
+	if(tempValue == 10) {
+		$("#setTemp").sevenSeg("destroy");
+		$("#setTemp").sevenSeg({ digits: 2});
+	}
+	
+	$("#setTemp").sevenSeg({ value: tempValue });
+	ws.send("Temp="+tempValue);
+}
+
+function buttonSetTempDown() {
+	if(tempValue <= 1)
+		return;
+	tempValue--;
+	
+	if(tempValue == 9) {
+		$("#setTemp").sevenSeg("destroy");
+		$("#setTemp").sevenSeg({ digits: 1});
+	}
+	$("#setTemp").sevenSeg({ value: tempValue });
+	ws.send("Temp="+tempValue);
+}
+
+function buttonSetTurUp() {
+	if(turValue >= 99)
+		return;
+	turValue++;
+	if(turValue == 10) {
+		$("#setTur").sevenSeg("destroy");
+		$("#setTur").sevenSeg({ digits: 2});
+	}
+	
+	$("#setTur").sevenSeg({ value: turValue });
+	ws.send("Tur="+turValue);
+}
+
+function buttonSetTurDown() {
+	if(turValue <= 1)
+		return;
+	turValue--;
+
+	if(turValue == 9) {
+		$("#setTur").sevenSeg("destroy");
+		$("#setTur").sevenSeg({ digits: 1});
+	}
+	$("#setTur").sevenSeg({ value: turValue });
+	ws.send("Tur="+turValue);
+}
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+$(function() { 
+	ws = new WebSocket("ws://" + ip + ":8081");
+	ws.onclose = function(evt) {
+	
+	};
+	
+	 ws.onopen = function(evt) { 
+		ws.send("Temp="+tempValue);
+		sleep(1000).then(() => { ws.send("Tur="+turValue); });
+	 };
+	 
+	 ws.onmessage = function(evt) {
+		//alert(evt.data);
+		var dataStr = [];
+		dataStr = evt.data.split(",");
+		var value0 = parseInt(dataStr[0]);
+		var value1 = parseFloat(dataStr[1]);
+		if((value1 < 0)) {
+			const button = document.getElementById('start_btn');
+			button.innerHTML = 'Start';
+			buttonStat = 0;
+		} else {
+			$("#curTemp").sevenSeg({ value: value0 });
+			$("#curTur").sevenSeg({ value: value1 });
+		}
+		//alert(value1);
+	 };
+ });
+
+</script>
+
+<h1 style="padding-left: 320px;">自動顯影機</h1>
+
+<button type="button" id="start_btn" onclick="buttonFunction()">Start</button>
+<div class="wrapper">
+	<div class="box e" style="width: 150px;"><b>溫度當前值(°C)</b></div>
+	<div class="box f" id="curTemp" style="width: 200px;height: 80px;"></div>
+	<div class="box g" style="width: 150px;"><b>濃度當前值</b></div>
+	<div class="box h" id="curTur" style="width: 200px;height: 80px;"></div>
+	<div class="box i" style="width: 150px;"><b>溫度設定值(°C)</b></div>
+	<div class="box j" id="setTemp" style="width: 200px;height: 80px;"></div>
+	<div class="box k" style="width: 150px;"><b>時間設定值(秒)</b></div>
+	<div class="box l" id="setTur" style="width: 200px;height: 80px;"></div>
+	<div class="box m"><input type="button" onclick="buttonSetTempUp()" style="width:100px;height:100px;background-image:url('img/up.png');border:none;background-size: 100px;"></div>
+	<div class="box n"><input type="button" onclick="buttonSetTempDown()" style="width:100px;height:100px;background-image:url('img/down.png');border:none;background-size: 100px;"></div>
+	<div class="box o"><input type="button" onclick="buttonSetTurUp()" style="width:100px;height:100px;background-image:url('img/up.png');border:none;background-size: 100px;"></div>
+	<div class="box p"><input type="button" onclick="buttonSetTurDown()" style="width:100px;height:100px;background-image:url('img/down.png');border:none;background-size: 100px;"></div>
+</div> 
+</body>
+</html>
